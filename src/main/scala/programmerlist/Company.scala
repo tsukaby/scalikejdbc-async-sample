@@ -12,11 +12,7 @@ case class Company(
   name: String,
   url: Option[String] = None,
   createdAt: DateTime,
-  deletedAt: Option[DateTime] = None) extends ShortenedNames {
-  def save()(implicit session: AsyncDBSession = AsyncDB.sharedSession, cxt: EC = ECGlobal): Future[Company] = Company.save(this)(session, cxt)
-
-  def destroy()(implicit session: AsyncDBSession = AsyncDB.sharedSession, cxt: EC = ECGlobal): Future[Int] = Company.destroy(id)(session, cxt)
-}
+  deletedAt: Option[DateTime] = None) extends ShortenedNames
 
 object Company extends SQLSyntaxSupport[Company] with ShortenedNames {
   override val columnNames = Seq("id", "name", "url", "created_at", "deleted_at")
