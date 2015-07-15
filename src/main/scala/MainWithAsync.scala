@@ -16,7 +16,7 @@ object MainWithAsync extends App {
   // akkaCreateXuweikVer // Actor版　吉田さん指摘により正しく動くようになった。
   akkaCreateGakuzzzzVer // Actor版　がくぞさん指摘取り込み txを使うのが良さそう？
 
-  private def normalCreate = {
+    private def normalCreate = {
     // create a new record within a transaction
     val created: Future[Company] = AsyncDB.localTx { implicit tx =>
       for {

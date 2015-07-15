@@ -11,6 +11,7 @@ case class Company(
   id: Long,
   name: String,
   url: Option[String] = None,
+  employees: List[Person] = None,
   createdAt: DateTime,
   deletedAt: Option[DateTime] = None) extends ShortenedNames
 
